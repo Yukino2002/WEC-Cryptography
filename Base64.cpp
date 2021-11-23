@@ -1,10 +1,14 @@
 #include <bits\stdc++.h>
 using namespace std;
+// Initialising the Base64 character set
+// Range is 0-63, as every character is represented using 6 bits
 string Base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 int main(){
     string encoded_message = "R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==";
     int length = encoded_message.size(), element;
+    
+    //declaring an intermediate string which will store the bit representation of individual characters from Base64
     string intermediate, decoded_message = "";
 
     for(int i = 0; i < length; i++){
