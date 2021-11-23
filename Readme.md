@@ -1,4 +1,4 @@
-<h1><b>WEC-Systems-Cryptography Assignment:</b></h1>
+<h1><b>WEC-Systems-Cryptography-Assignment:</b></h1>
 <h2><b>Solution:</b></h2>
 
 </br>1. Scanning QR Code: 
