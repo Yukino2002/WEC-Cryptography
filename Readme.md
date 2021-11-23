@@ -7,6 +7,6 @@ On reading the QR code provided using a QR scanner app, we receive the following
 >R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==
 
 </br><b>2. Using Base64 decoder:</b>
-The encrypted message is a string consisting of characters from the sets `[A-Z]`, `[a-z]`, `[0-9]` and has `'='` symbols in the message. So, converting it from Base64 to ASCII:</br></br>
+The encrypted message is a string consisting of characters from the sets `[A-Z]`, `[a-z]`, `[0-9]` and has `'='` symbols at the end. So, converting it from Base64 to ASCII:</br></br>
 
 >
