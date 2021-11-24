@@ -38,7 +38,7 @@ In the question, '100' gave the hint that it must be shifted 100 times, or 100 %
 
 
 
-</br><b>4. Applying Playfair Cipher:</b> The first statement gives us the hint of using playfair cipher on the second statement, which is still encrypted. That gives us:</br></br>
+</br></br><b>4. Applying Playfair Cipher:</b> The first statement gives us the hint of using playfair cipher on the second statement, which is still encrypted. That gives us:</br></br>
 
 >RSAENCRYPTNUMBERTWOHUNDREDFOURTYTHREEWITHNVALUEASTWOTHOUSANDFOURHUNDREDANDNINETEENANDEVALUEASELEVENX
 
@@ -58,4 +58,33 @@ For encryption, just choose the elements after the character instead of taking t
 Here, the 'X' at the end of the decrypted message is a bogus character without any meaning.
 
 
+
+</br></br><b>5. Applying RSA Encryption:</b> We get the following numbers from our previously decrypted message. They are:</br></br>
+
+>m (Message) = 243</br>
+n, e (Public Key) = 2419, 11
+
+</br>RSA encryption involves generating a public key, which is the product of somw two primes, say p and q, so, n = p*q;
+
+We also need an exponent part, e which is an integer and not a factor of n, and must be in the range 1 < e < Φ(n).
+
+The encryption and decryption process for RSA is fairly complex but for the given task, since the data was already provided, encrypting it was application of a basic formula, which is, encrypted message = (m ^ e) % n.
+
+We get 1982 as the result.
+
+</br></br><b>6. Unlocking the zip:</b> We get the following number as our result from RSA encryption:</br></br>
+
+>1982
+
+</br>On trying this number on the locked zip file we were provided with, it successfully unlocked it. The encrypted message we get is:</br></br>
+
+>TM, DTZ KTZSI RJ😔. HTSLWFYX. YMNX NX YMJ JSILTFQ. TW NX NY?🤨
+
+</br>This is a clear application of caesar cipher again.
+
+
+
+</br></br><b>7. Applying Caesar Cipher Again:</b> Since there was no hint given this time, we had to brute force all the possible solutions. On checking manually, We finally get the decrypted message:</br></br>
+
+>OH, YOU FOUND ME😔. CONGRATS. THIS IS THE ENDGOAL. OR IS IT?🤨
 
