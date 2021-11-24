@@ -14,6 +14,9 @@ PDA JATP YELDAN GAUOMQWNA EO PDA WHLDWXAPO SEPDKQP F</br>
 OPXWODPSKQLONCXQNUJEOLXPWAEHMOUZOEQXXVKUJOWBLMWXPQUIOELPMYKYEHMOGOKYQXAXKYKDLYQZYLYHAWWBLMWXQYLWVWOY
 
 </br><b>3. Applying Caesar Cipher:</b>
-The first statement gives us the hint of using caesar cipher on the encrypted message. Iterating brute force through all the 26 possible solutions we get:
+The first statement gives us the hint of using caesar cipher on the encrypted message, being that all the characters in uppercase alphabets. Iterating brute force through all the 26 possible solutions and manually checking them, we get:</br></br>
 
->
+>THE NEXT CIPHER KEYSQUARE IS THE ALPHABETS WITHOUT J</br>
+STBASHTWOUPSRGBURYNISPBTAEILQSYDSIUBBZOYNSAFPQABTUYMSIPTQCOCILQSKSOCUBEBOCOHPCUDCPCLEAAFPQABUCPAZASC
+
+</br><b>4. Applying Playfair Cipher:</b> The first statement gives us the hint of using playfair cipher on the second statement, which is still encrypted.

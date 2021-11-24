@@ -49,6 +49,6 @@ int main(){
     }
 
     // displaying the final message for the first step
-    cout << decrypted_message;
+    cout << decrypted_message << "\n";
     return 0;
 }
