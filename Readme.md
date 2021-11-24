@@ -13,7 +13,13 @@ The encrypted message is a string consisting of characters from the sets `[A-Z]`
 PDA JATP YELDAN GAUOMQWNA EO PDA WHLDWXAPO SEPDKQP F</br>
 OPXWODPSKQLONCXQNUJEOLXPWAEHMOUZOEQXXVKUJOWBLMWXPQUIOELPMYKYEHMOGOKYQXAXKYKDLYQZYLYHAWWBLMWXQYLWVWOY
 
-</br><b>3. Applying Caesar Cipher:</b>
+</br>In the encoding process of Base64, we convert the ASCII characters into their 8 bit binary representations. Then, we make groups of 6 and convert them into their corresponding character in the Base64 character set. Ex: "ABC" in ASCII -> (01000001)(01000010)(01000011) -> (010000)(010100)(001001)(000011) -> QUJD in Base64</br>
+
+However, the total number of bits might not be a multiple of 6 (will fall short either by  2 or 4), so in that case, we append two zeroes to the right to make groups of 6 bits.
+
+For decoding, we just convert all the Base64 chars into 6 bits based on their index, if we get any '=' pop 2 zeroes from the end and make groups of 8. We then convert them to their ASCII values, and obtain the decrypted string.
+
+</br></br><b>3. Applying Caesar Cipher:</b>
 The first statement gives us the hint of using caesar cipher on the encrypted message, being that all the characters in uppercase alphabets. Iterating brute force through all the 26 possible solutions and manually checking them, we get:</br></br>
 
 >THE NEXT CIPHER KEYSQUARE IS THE ALPHABETS WITHOUT J</br>
