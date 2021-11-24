@@ -7,7 +7,7 @@ char keysquare[5][5] = {{'A','B','C','D','E'}, {'F','G','H','I','K'}, {'L','M','
 map <char, pair<int, int>> m;
 
 int main(){
-    // the encrypted message we received from solving the previous task
+    // the encrypted message we received from applying caesar cipher
     string s = "STBASHTWOUPSRGBURYNISPBTAEILQSYDSIUBBZOYNSAFPQABTUYMSIPTQCOCILQSKSOCUBEBOCOHPCUDCPCLEAAFPQABUCPAZASC";
     string decrypted_message = "";
     int length = s.size();

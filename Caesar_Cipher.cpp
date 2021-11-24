@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    // the two encrypted messages we received from solving the previous task
+    // the two encrypted messages we received from applying Base64 decoding
     string s1 = "PDA JATP YELDAN GAUOMQWNA EO PDA WHLDWXAPO SEPDKQP F";
     string s2 = "OPXWODPSKQLONCXQNUJEOLXPWAEHMOUZOEQXXVKUJOWBLMWXPQUIOELPMYKYEHMOGOKYQXAXKYKDLYQZYLYHAWWBLMWXQYLWVWOY";
     int length1 = s1.size(), length2 = s2.size(), n1, n2;
@@ -29,7 +29,7 @@ int main(){
         n2 = 65 + (n2 - 65 + n) % 26;
         s2[j] = char(n2);
     }
-    
+
     cout << s1 << "\n" << s2 << "\n\n";
     return 0;
 }
