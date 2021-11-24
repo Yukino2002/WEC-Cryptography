@@ -7,24 +7,30 @@ string Base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
 int main(){
     string encrypted_message = "R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==";
     int length = encrypted_message.size(), element;
-    string intermediate, decrypted_message = "";
+    string intermediate, decrypted_message = "", temp;
 
     // loop to convert the Base64 encrypted code into one large binary string
     for(int i = 0; i < length; i++){
-        // we check at which index the particular character occurs, because we need the 6 bit representation of that index
         if(encrypted_message[i] != '='){
             // .find() finds the first occurence of that character in the Base64 string
             element = Base64.find(encrypted_message[i]);
 
-            // bitset function directly calculates the binary value corresponding to the number
-            bitset<6> b = (element);
-            // apending it to the intermediate string
-            intermediate += b.to_string();
+            temp = "";
+            int rem, m = 6;
+            // calculating 6 bit binary form of Base64 char
+            while(m--){
+                rem = element % 2;
+                element /= 2;
+                if(rem == 0) temp += '0';
+                else temp += '1';
+            }
+            // appending temp in reverse to the intermediate
+            for(int i = 5; i >= 0; i--){
+                intermediate += temp[i];
+            }
         }
 
         // if we have '=' we must pop 2 zeroes from the end
-        // while decoding we make groups of 8 consecutive bits but the number of bits in intermediate string might not be a multiple of 8
-        // while encoding we fall short by either 2 or 4 bits, so we add '=' per two '0' bits appended at the end
         else{
             intermediate.pop_back();
             intermediate.pop_back();
@@ -40,12 +46,9 @@ int main(){
         for(int j = i; j < i + 8; j++){
             if(intermediate[j] == '1') num += pow(2, (7 - (j - i)));
         }
-
-        // typecasting it to char and appending to the decrypted string
         decrypted_message += (char)num;
     }
 
-    // displaying the final message for the first step
     cout << decrypted_message << "\n";
     return 0;
 }
