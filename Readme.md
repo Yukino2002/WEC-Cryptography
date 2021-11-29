@@ -1,16 +1,17 @@
 <h1><b>WEC-Systems-Cryptography-Assignment:</b></h1>
-<h2><b>Solution:</b></h2>
+<h1><b>Solution:</b></h1>
 
 
+</br><h2><b>First Task:</b></h2>
+</br><b>Scanning QR Code:</b> 
 
-</br><b>1. Scanning QR Code:</b> 
 On reading the QR code provided using a QR scanner app, we receive the following text:</br></br>
 
 >R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==
 
 
-
-</br></br><b>2. Using Base64 decoder:</b>
+</br><h2><b>Second Task:</b></h2>
+</br><b>Using Base64 decoder:</b>
 The encrypted message is a string consisting of characters from the sets `[A-Z]`, `[a-z]`, `[0-9]` and has `'='` symbols at the end. So, converting it from Base64 to ASCII:</br></br>
 
 >Great job. Julius Caeser was born in the 100 BC:</br>
@@ -24,8 +25,8 @@ However, the total number of bits might not be a multiple of 6 (will fall short 
 For decoding, we just convert all the Base64 chars into 6 bits based on their index, for every '=', we pop 2 zeroes from the end and make groups of 8. We then convert them to their ASCII values, and obtain the decrypted string.
 
 
-
-</br></br><b>3. Applying Caesar Cipher:</b>
+</br><h2><b>Third Task:</b></h2>
+</br><b>Applying Caesar Cipher:</b>
 The first statement gives us the hint of using caesar cipher on the encrypted message, using that we get:</br></br>
 
 >THE NEXT CIPHER KEYSQUARE IS THE ALPHABETS WITHOUT J</br>
@@ -37,8 +38,8 @@ There are 26 possible encryptions for any string, so if we don't know the value 
 In the question, '100' gave the hint that it must be shifted 100 times, or 100 % 26 = 22 times behind.
 
 
-
-</br></br><b>4. Applying Playfair Cipher:</b> The first statement gives us the hint of using playfair cipher on the second statement, which is still encrypted. That gives us:</br></br>
+</br><h2><b>Fourth Task:</b></h2>
+</br><b>Applying Playfair Cipher:</b> The first statement gives us the hint of using playfair cipher on the second statement, which is still encrypted. That gives us:</br></br>
 
 >RSAENCRYPTNUMBERTWOHUNDREDFOURTYTHREEWITHNVALUEASTWOTHOUSANDFOURHUNDREDANDNINETEENANDEVALUEASELEVENX
 
@@ -58,8 +59,8 @@ For encryption, just choose the elements after the character instead of taking t
 Here, the 'X' at the end of the decrypted message is a bogus character without any meaning.
 
 
-
-</br></br><b>5. Applying RSA Encryption:</b> We get the following numbers from our previously decrypted message. They are:</br></br>
+</br><h2><b>Fifth Task:</b></h2>
+</br><b>Applying RSA Encryption:</b> We get the following numbers from our previously decrypted message. They are:</br></br>
 
 >m (Message) = 243</br>
 n, e (Public Key) = 2419, 11
@@ -72,7 +73,9 @@ The encryption and decryption process for RSA is fairly complex but for the give
 
 We get 1982 as the result.
 
-</br></br><b>6. Unlocking the zip:</b> We get the following number as our result from RSA encryption:</br></br>
+
+</br><h2><b>Sixth Task:</b></h2>
+</br><b>Unlocking the zip:</b> We get the following number as our result from RSA encryption:</br></br>
 
 >1982
 
@@ -83,8 +86,8 @@ We get 1982 as the result.
 </br>This is a clear application of caesar cipher again.
 
 
-
-</br></br><b>7. Applying Caesar Cipher Again:</b> Since there was no hint given this time, we had to brute force all the possible solutions. On checking manually, We finally get the decrypted message:</br></br>
+</br><h2><b>Seventh Task:</b></h2>
+</br><b>Applying Caesar Cipher Again:</b> Since there was no hint given this time, we had to brute force all the possible solutions. On checking manually, We finally get the decrypted message:</br></br>
 
 >OH, YOU FOUND ME😔. CONGRATS. THIS IS THE ENDGOAL. OR IS IT?🤨
 
